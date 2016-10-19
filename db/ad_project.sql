@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2016 at 05:58 PM
+-- Generation Time: Oct 19, 2016 at 06:43 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS `ad_live` (
 --
 
 INSERT INTO `ad_live` (`id`, `page_id`, `ad_id`, `clicks`, `total_clicks`) VALUES
-(1, 1, 1, 11, 11),
-(2, 1, 5, 14, 14),
+(1, 1, 3, 0, 11),
+(2, 1, 7, 1, 18),
 (3, 2, 4, 0, 10),
 (4, 2, 8, 0, 11);
 
@@ -71,10 +71,10 @@ INSERT INTO `ad_master` (`id`, `provider_id`, `link`, `img`, `position_id`, `reg
 (2, 2, 'http://google-rwo.com', './imgs/ads_2.jpg', 1, 'abcd', 110, '150', '200'),
 (3, 3, 'http://google-three.com', './imgs/ads_1.gif', 1, 'abcd', 120, '150', '200'),
 (4, 4, 'http://google-four.com', './imgs/ads_2.jpg', 1, 'abcd', 130, '150', '200'),
-(5, 1, 'http://facebook.com', './imgs/ads_2.jpg', 2, 'abcd', 105, '150', '200'),
-(6, 2, 'http://facebook.com', './imgs/ads_2.jpg', 2, 'abcd', 115, '150', '200'),
-(7, 3, 'http://facebook.com', './imgs/ads_1.gif', 2, 'abcd', 125, '150', '200'),
-(8, 4, 'http://facebook.com', './imgs/ads_2.jpg', 2, 'abcd', 135, '150', '200');
+(5, 1, 'http://facebook-one.com', './imgs/ads_2.jpg', 2, 'abcd', 105, '150', '200'),
+(6, 2, 'http://facebook-two.com', './imgs/ads_2.jpg', 2, 'abcd', 115, '150', '200'),
+(7, 3, 'http://facebook-three.com', './imgs/ads_1.gif', 2, 'abcd', 125, '150', '200'),
+(8, 4, 'http://facebook-four.com', './imgs/ads_2.jpg', 2, 'abcd', 135, '150', '200');
 
 -- --------------------------------------------------------
 
