@@ -21,15 +21,17 @@
       Connection conn = DriverManager.getConnection(myUrl, "root", "");
       
       Statement st = conn.createStatement();
-      String query = "SELECT `ad_master`.`link`,`ad_live`.`clicks` FROM `ad_live` LEFT JOIN  `ad_master` ON `ad_live`.`ad_id` = `ad_master`.`id` where ad_live.id = "+ ad_id +" limit 1";
+      String query = "SELECT `ad_master`.`link`,`ad_live`.`clicks`,`ad_live`.`total_clicks` FROM `ad_live` LEFT JOIN  `ad_master` ON `ad_live`.`ad_id` = `ad_master`.`id` where ad_live.id = "+ ad_id +" limit 1";
       ResultSet rs = st.executeQuery(query);
       String l_link = "	/";
-      int click=0;
+      int click=0,total_clicks=0;
       while (rs.next())
       {
   		l_link = rs.getString("link");
   		click=rs.getInt("clicks")+1;
-  		String uQuery="Update ad_live SET `clicks`="+click+" WHERE id="+ad_id;
+      total_clicks=rs.getInt("total_clicks")+1;
+
+  		String uQuery="Update ad_live SET `clicks`="+click+" , total_clicks="+total_clicks+" WHERE id="+ad_id;
   		st.executeUpdate(uQuery);
         break;
       }
