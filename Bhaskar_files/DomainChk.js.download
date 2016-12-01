@@ -1,0 +1,18 @@
+﻿ValidPage();
+
+function ValidPage() {
+
+//alert("document.location.hostname : " + window.location.hostname);
+
+  
+    var url = document.createElement('a');
+    url.href = document.referrer;
+//alert(url.hostname);
+    if (url.hostname == "" || url.hostname == "124.153.118.153" || url.hostname == "money1.divyabhaskar.co.in"|| url.hostname == "money.divyabhaskar.co.in"|| url.hostname == "m.money.divyabhaskar.co.in") {
+       
+    }  
+else{ 
+//window.location.href = "authentication.aspx";
+}
+
+}

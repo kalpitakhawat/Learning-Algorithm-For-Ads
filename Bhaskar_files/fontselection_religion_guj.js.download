@@ -1,0 +1,65 @@
+
+/********************************************************************
+                
+                CUSTOMIZE THE FOLLOWING IF REQUIRED.
+                
+********************************************************************/
+
+
+// The path to the folder of eot files
+
+var path_to_eot = "/religiondivya2010/font_family/"; 
+
+// Name of the custom font that you would like to use in your CSS or Style properties.
+
+var Gitu_font ="Gujarati_WEB_Intro_Test";
+var head_font ="Gujarati_Web_Head_Test_exp";
+
+
+
+/*******************************************************************
+                
+                DO NOT CHANGE ANYTHING BELOW THIS LINE.
+                
+*******************************************************************/
+
+var OSName="Unknown OS";
+var browserName="Unknown browser";
+
+if(navigator.userAgent.indexOf("MSIE") != -1) 
+{
+                browserName="EOTBrowser";
+}
+else if(navigator.userAgent.indexOf("Android") != -1 || navigator.userAgent.indexOf("iphone") != -1 ||  navigator.userAgent.indexOf("iPad") != -1) 
+{
+                browserName="NoBrowser";
+}
+else
+{
+                browserName="TTFBrowser";
+}
+if(browserName == "TTFBrowser") 
+{
+				
+				document.write("<style type='text/css'>");
+                document.write(" @font-face { font-family:"+head_font+";font-style:  normal;font-weight: normal;");
+				document.write(" src: url("+path_to_eot+"Bhaskar_Guj_Head_ship.ttf) format('truetype') ; } "); 
+				document.write(" </style>"); 
+                document.write("<style type='text/css'>");
+                document.write(" @font-face { font-family:"+Gitu_font+";font-style:  normal;font-weight: normal;");
+                document.write(" src: url("+path_to_eot+"Bhaskar_Guj_Intro_ship.ttf) format('truetype') ; } ");
+				document.write(" </style>");  
+				 
+}
+else if(browserName == "EOTBrowser")
+{
+				
+                document.write("<style type='text/css'>");
+                document.write(" @font-face { font-family:"+head_font+";font-style:  normal;font-weight: normal;");
+                document.write("   src: url("+path_to_eot+"Bhaskar_Guj_Head_ship.eot); }"); 
+				document.write(" </style>");
+				document.write("<style type='text/css'>");
+                document.write(" @font-face { font-family:"+Gitu_font+";font-style:  normal;font-weight: normal;");
+				document.write("   src: url("+path_to_eot+"Bhaskar_Guj_Intro_ship.eot); }");  
+				document.write(" </style>");  
+}

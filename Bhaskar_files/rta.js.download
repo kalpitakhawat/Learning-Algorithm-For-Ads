@@ -1,0 +1,1 @@
+crtg_content = ''; (function(){document.cookie = 'crtg_rta=' + escape(crtg_content) + '; path=/; expires=Sat, 31 Dec 2016 16:05:20 GMT; domain=divyabhaskar.co.in';})();

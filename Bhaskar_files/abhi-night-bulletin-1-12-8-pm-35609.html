@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)http://ultima.bhaskar.com/videos-jab/abhi-night-bulletin-1-12-8-pm-35609.html?autoplayFlag=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>DB Videos</title>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+	<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./player.css">
+    <script src="./client.js.download" async="" type="text/javascript"></script><script>var d = new Date(),timestamps = d.getTime(),isAdBlock=true,duration=vtid=adid=cend=rec_pos=rec_next=rec=adsevent=0,replay=1,dataLayer=[];
+	 var siteUrl = 'http://ultima.bhaskar.com/',video_Id = '35609',cat_id = '8',chn_id = '960',callunit = '/131958808/DVB_video_Janiye_Abhi',autoplay = '1',device = 'w',campn = 'abhi-night-bulletin-1-12-8-pm-195530',vasturl1 = 'http://pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=/131958808/DVB_video_Janiye_Abhi&impl=s&gdfp_req=1&env=vp&output=xml_vast3&unviewed_position_start=1&hl=en&url=http://www.divyabhaskar.co.in/&description_url=http://www.divyabhaskar.co.in/&correlator=#time1#&scor=#time1#',fshare = 'http://dbvideos.divyabhaskar.co.in/bulletin/abhi-night-bulletin-1-12-8-pm-35609.html',showRec= '2',sec_track= 'videos-jab',sec_id= '18',ref_d='www.divyabhaskar.co.in',ads='',prov_id='0',rdom = 'http://www.divyabhaskar.co.in/',dur1 = '0',dur2 = '0',dur3 = '0',dblogo = '0',lastIntro = '0',catName = 'bulletin';
+       
+	function checkPlatform(){ 
+		var OSName = 'unknown';
+		var nVer = navigator.appVersion;
+		if (nVer.indexOf("Windows NT 10.0")!=-1) OSName="Windows 10";
+		if (nVer.indexOf("Windows NT 6.2")!=-1) OSName="Windows 8";
+		if (nVer.indexOf("Windows NT 6.1")!=-1) OSName="Windows 7";
+		if (nVer.indexOf("Windows NT 6.0")!=-1) OSName="Windows Vista";
+		if (nVer.indexOf("Windows NT 5.1")!=-1) OSName="Windows XP";
+		if (nVer.indexOf("Windows NT 5.0")!=-1) OSName="Windows 2000";
+		if (nVer.indexOf("Mac")!=-1) OSName="Mac/iOS";
+		if (nVer.indexOf("X11")!=-1) OSName="UNIX";
+		if (nVer.indexOf("Linux")!=-1) OSName="Linux";
+	
+		return OSName;
+	}
+	var os = checkPlatform();
+	var checkMobile = {
+		Android: function() { return navigator.userAgent.match(/Android/i) ? true : false; },
+		BlackBerry: function() { return navigator.userAgent.match(/BlackBerry/i) ? true : false; },
+		iOS: function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false; },
+		Opera: function() { return navigator.userAgent.match(/Opera Mini/i) ? true : false; },
+		Windows: function() { return navigator.userAgent.match(/IEMobile/i) ? true : false; },
+		Tablet: function() { return ((checkMobile.Android() && navigator.userAgent.match(/mobile/i) == null) || navigator.userAgent.match(/iPad/i) !== null) ? true : false; },
+		any: function() { return (checkMobile.Android() || checkMobile.BlackBerry() || checkMobile.iOS() || checkMobile.Opera() || checkMobile.Windows()); } };
+	
+	function chkDevice(){
+		var istablet = checkMobile.Tablet();
+		var ismobile = checkMobile.any() && !istablet;
+		var isdesktop = !ismobile;
+		var isios = checkMobile.iOS();
+		if(istablet) return 1;
+		if(isdesktop) return 3;
+		if(isios) return 4;
+		if(ismobile) return 2;
+		
+		return 5;
+	}
+	var device_id = chkDevice();
+	
+	var nAgt = navigator.userAgent;
+	var browserName  = navigator.appName;
+	var fullVersion  = ''+parseFloat(navigator.appVersion); 
+	var majorVersion = parseInt(navigator.appVersion,10);
+	var nameOffset,verOffset,ix;
+	
+	// In Opera 15+, the true version is after "OPR/" 
+	if ((verOffset=nAgt.indexOf("OPR/"))!=-1) {
+	 browserName = "Opera";
+	 fullVersion = nAgt.substring(verOffset+4);
+	}
+	// In older Opera, the true version is after "Opera" or after "Version"
+	else if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+	 browserName = "Opera";
+	 fullVersion = nAgt.substring(verOffset+6);
+	 if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+	   fullVersion = nAgt.substring(verOffset+8);
+	}
+	// In MSIE, the true version is after "MSIE" in userAgent
+	else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+	 browserName = "Microsoft Internet Explorer";
+	 fullVersion = nAgt.substring(verOffset+5);
+	}
+	// In Chrome, the true version is after "Chrome" 
+	else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+	 browserName = "Chrome";
+	 fullVersion = nAgt.substring(verOffset+7);
+	}
+	// In Safari, the true version is after "Safari" or after "Version" 
+	else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+	 browserName = "Safari";
+	 fullVersion = nAgt.substring(verOffset+7);
+	 if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+	   fullVersion = nAgt.substring(verOffset+8);
+	}
+	// In Firefox, the true version is after "Firefox" 
+	else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+	 browserName = "Firefox";
+	 fullVersion = nAgt.substring(verOffset+8);
+	}
+	// In most other browsers, "name/version" is at the end of userAgent 
+	else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < 
+			  (verOffset=nAgt.lastIndexOf('/')) ) 
+	{
+	 browserName = nAgt.substring(nameOffset,verOffset);
+	 fullVersion = nAgt.substring(verOffset+1);
+	 if (browserName.toLowerCase()==browserName.toUpperCase()) {
+	  browserName = navigator.appName;
+	 }
+	}
+	// trim the fullVersion string at semicolon/space if present
+	if ((ix=fullVersion.indexOf(";"))!=-1)
+	   fullVersion=fullVersion.substring(0,ix);
+	if ((ix=fullVersion.indexOf(" "))!=-1)
+	   fullVersion=fullVersion.substring(0,ix);
+	
+	majorVersion = parseInt(''+fullVersion,10);
+	if (isNaN(majorVersion)) {
+	 fullVersion  = ''+parseFloat(navigator.appVersion); 
+	 majorVersion = parseInt(navigator.appVersion,10);
+	}
+	
+	var title = "સરકારે ઘરમાં જમા કરેલ સોના પર મર્યાદા લાધી, પરણિત સ્ત્રી 500 ગ્રામ સુધી સોનું રાખી શકશે"; 
+	var video_desc = "";
+	var editor_name = 'Dipak Chudasama';
+	var ga_url = 'http://www.divyabhaskar.co.in/';
+	var poster = 'http://i9.dainikbhaskar.com/thumbnail/660x370/web2images/videos/2016/12/01/ads_image_2461480602330.jpg';
+	var sec_city = '0';
+    </script>
+<script src="./video_user_log.php"></script></head>
+<body><div id="playerBox" class="player_box">
+  <div class="t_align vid_box">
+    <div class="ac_mute" id="ac_vol" style="display: none;"></div>
+    <div id="adContainer" class="adcnone" style="display: none;"></div>
+    <!-- <share section> --> 
+    <div class="share-popup" id="share_popup" style="width: 0%;">
+   <div class="wshare-panel-inner-content">
+      <div class="social-icons">
+        <div class="ytp-button wshare-panel-close" title="Close" id="close"></div>
+                 
+        <a href="javascript:void(0)" onclick="shareEvent(fshare,&#39;&#39;,&#39;w&#39;,1)" title="Facebook" class="fb m_r10">Facebook</a>
+        <a href="javascript:void(0)" onclick="shareEvent(fshare,&#39;&#39;,&#39;w&#39;,2)" title="Twitter" class="tw m_r10">Twitter</a>
+        <a href="javascript:void(0)" onclick="shareEvent(fshare,&#39;&#39;,&#39;w&#39;,4)" title="Linkedin" class="Linkedin">Linkedin</a>
+        </div>
+    </div>
+ </div> 
+    <!-- <share section> -->
+    <div class="wtop_icons" id="share_icons" style="display: block;">
+      <div class="watch-later" id="watchLater" title="Watch Later">Watch Later</div>
+      <div class="share" id="share" title="Share">Share</div>
+    </div>
+    <video id="videoId" poster="http://i9.dainikbhaskar.com/thumbnail/660x370/web2images/videos/2016/12/01/ads_image_2461480602330.jpg" src="http://videodelivery.bhaskar.com/delivery/nat/2016/12/01/news_bulettin_@_8_pm_ronak_201612010753_480k.mp4" preload="none">
+      <!-- <source id="vidsrc" src="http://videodelivery.bhaskar.com/delivery/nat/2016/12/01/news_bulettin_@_8_pm_ronak_201612010753_480k.mp4" type="video/mp4"></source> -->
+    </video>
+    <div class="overlay_icons" id="sicons_div" style="display: block;">
+      <div class="overlay_icons_icon" id="s_icons"><svg width="100%" viewBox="0 0 40 40" version="1.1" height="100%"> <path d="m 12.22,28.88 0,-17.77 16.66,8.91 -16.66,8.86 z" class="icon_fill"></path></svg></div>
+    </div>
+    <div class="oplay" id="oplay"></div>
+  </div>
+  <!-- <control bar> --> 
+  <div id="ctrBar" style="display: block;">
+  <div class="ctrBar-div">
+    <div class="progressbar p_relative">
+      <div class="buffer-bar" id="buffered-amount" style="width: 1.92561%;"></div>
+      <div class="seek-bar" id="progress-amount" style="width: 0%;"></div>
+      <div class="range-slider progress_range" id="r_slider"> <span id="skSld" style="width: 20px; left: 0%;"></span> </div>
+    </div>
+  </div>
+  <div class="other_control">
+    <div class="left-control">
+      <div id="btnPlay" class="play" style="background-position: 0px 0px;">Play</div>
+      <div class="n-vid " title="Next Video" id="nextRec">Next Video</div>
+      <div class="volumn_div" id="volumn_slider">
+        <div class="volume_on" title="Volume" id="mBtn" style="background-position: -26px 0px;">Volume</div>
+        <div class="volumn_slider " id="v_slider">
+          <div class="vol-bar" id="vol-amt" style="width: 35px;"></div>
+          <div class="range_slider_vol" id="vol_slider"> <span id="volSld" style="width: 5px; left: 35px;"></span> </div>
+        </div>
+      </div>
+      <div class="time"><span id="cTime">00:00</span> / <span id="dTime">00:00</span></div>
+      <span class="bulletin-kview bviews">8K View</span>    </div>
+    <div class="right-control p_relative">
+      <div class="setting" id="setting" title="Setting">setting</div>
+      <div class="settings" id="settings" style="width: 110px;">
+        <div class="Quality" id="allsettings" style="display: block;"> 
+          <!--<div id="autoplay">Autoplay</div>-->
+          <ul>
+            <li id="speed_click"><span class="float_left">Speed</span><span id="st-arrow-spd" class="arrow-right">Normal</span></li>
+            <li id="quality_click"><span class="float_left">Quality</span> <span id="st-arrow-ql" class="arrow-right">360p </span></li>
+          </ul>
+        </div>
+        <div class="Quality" id="speed_div" style="display: none;">
+          <h2 id="speed">Speed</h2>
+          <ul>
+            <li onclick="playRate(0.25,1)"><span id="pr1" class="">0.25</span></li>
+            <li onclick="playRate(0.5,2)"><span id="pr2" class="">0.5</span></li>
+            <li onclick="playRate(1,3)"><span id="pr3" class="active">Normal</span></li>
+            <li onclick="playRate(1.25,4)"><span id="pr4" class="">1.25</span></li>
+            <li onclick="playRate(1.5,5)"><span id="pr5" class="">1.5</span></li>
+            <li onclick="playRate(2,6)"><span id="pr6" class="">2</span></li>
+          </ul>
+        </div>
+        <div class="Quality" id="quality_div" style="display: none;">
+          <h2 id="quality">Quality</h2>
+          <ul>
+                                    <li onclick="changeQuality(480,1,3)"> <span id="ql1">480p<sup>HD</sup></span> </li>
+                                    <li onclick="changeQuality(360,2,3)"> <span id="ql2" class="active">360p</span> </li>
+                                    <li onclick="changeQuality(146,3,3)"> <span id="ql3">146p</span> </li>
+                                  </ul>
+        </div>
+      </div>
+      <div class="fullscreen" id="sfBtn" title="Fullscreen">fullscreen</div>
+      <div class="l-dbtv" id="dbtv"><a href="http://dbvideos.divyabhaskar.co.in/" title="DB VIDEOS" target="_blank">DB Videos</a></div>
+    </div>
+  </div>
+</div>
+</div> 
+  <!-- <control bar> --> 
+
+<article class="db-logo" id="db-logo"><img src="./db-logo-3.png" id="DBLogo" alt="DBLogo"></article>    
+<article class="video-title-parent" id="slug-intro">  
+    <article class="video-title"></article>
+        <span class="video-title-text" id="video-slug-1"></span>
+        <span class="video-title-text" id="video-slug-2"></span>
+        <span class="video-title-text" id="video-slug-3"></span>
+    </article>
+
+
+<script type="text/javascript">
+   var slugh = window.innerHeight;
+   if(slugh > 450){ document.getElementById("slug-intro").style.bottom = "100px"; }
+</script>	
+
+<img src="./last-intro.jpg" width="100%" height="100%" alt="DB Intro" id="lastIntro" style="display:none; position:absolute;top: 0;"> 
+<div class="u-load" id="loader" style="display: none;">&nbsp;</div>
+<div class="dbtv-spinner" data-layer="4" id="loader1" style="display: none;"> <span class="dbtv-spinner-svg"> <svg height="100%" version="1.1" viewBox="0 0 22 22" width="100%"> <svg x="7" y="1">
+  <circle class="dbtv-spinner-dot dbtv-spinner-dot-0" cx="4" cy="4" r="2"></circle>
+  </svg> <svg x="11" y="3">
+  <circle class="dbtv-spinner-dot dbtv-spinner-dot-1" cx="4" cy="4" r="2"></circle>
+  </svg> <svg x="13" y="7">
+  <circle class="dbtv-spinner-dot dbtv-spinner-dot-2" cx="4" cy="4" r="2"></circle>
+  </svg> <svg x="11" y="11">
+  <circle class="dbtv-spinner-dot dbtv-spinner-dot-3" cx="4" cy="4" r="2"></circle>
+  </svg> <svg x="7" y="13">
+  <circle class="dbtv-spinner-dot dbtv-spinner-dot-4" cx="4" cy="4" r="2"></circle>
+  </svg> <svg x="3" y="11">
+  <circle class="dbtv-spinner-dot dbtv-spinner-dot-5" cx="4" cy="4" r="2"></circle>
+  </svg> <svg x="1" y="7">
+  <circle class="dbtv-spinner-dot dbtv-spinner-dot-6" cx="4" cy="4" r="2"></circle>
+  </svg> <svg x="3" y="3">
+  <circle class="dbtv-spinner-dot dbtv-spinner-dot-7" cx="4" cy="4" r="2"></circle>
+  </svg> </svg></span> </div>
+<!--<video tracking> -->
+  <script type="text/javascript">
+function readCookieRealTime(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+function createCookieRealTime(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	var full = window.location.host
+    var parts = full.split('.');
+    var sub = parts[0];
+    var domain = parts[1];
+    var type = parts[2];
+	if(type=='co'){
+		type = type + '.' + parts[3];  	
+	}
+    var newDomain =  '.'+ domain + '.' + type;
+	document.cookie = name+"="+value+expires+"; path=/;domain="+newDomain;
+}
+
+var sFlag = 2;
+var playerUID = readCookieRealTime('bhaskarUUID');
+if(!playerUID || playerUID == null){
+	playerUID = "";
+}
+//-location check---
+var locInfo = readCookieRealTime('locInfo');
+var country = '',state = '',city = '';
+if(locInfo || locInfo !== null){
+   var locArr = locInfo.split('::'); 
+   country = locArr[0];
+   state = locArr[1];
+   city = locArr[2];	 
+}
+var vidTData = '';
+function vid_tracking(video_Id){
+	sendPostMsg('Start',1);
+	var adsblock = 0; if(isAdBlock==true){ adsblock = 1;}
+	var data = 'video_id='+video_Id+
+		'&sec_id='+sec_id+
+		'&prov_id='+prov_id+
+		'&title='+encodeURIComponent(title)+
+		'&description='+encodeURIComponent(video_desc)+
+		'&img='+encodeURIComponent(poster)+
+		'&user_id=1323'+
+		'&author='+encodeURIComponent(editor_name)+
+		'&created=2016-12-01 19:57:07'+
+		'&url='+encodeURIComponent(ga_url)+
+		'&rec='+rec+
+		'&rec_pos='+rec_pos+
+		'&rec_next='+rec_next+ 
+		'&ref_d='+ref_d+ 
+		'&sec_city='+sec_city+
+		'&sec_track='+sec_track+
+		'&p_sessionID='+playerUID+ 
+		'&sFlag='+sFlag+
+		'&adsevent='+adsevent+
+		'&cat_id='+cat_id+
+		'&adsblock='+adsblock+  
+		'&domaintype='+device+
+		'&channel_id=960'+ 
+		'&storyid=0'+ 
+		'&replay='+cend+
+		'&country='+country+
+		'&state='+state+ 
+		'&city='+city+
+		'&os='+os+
+		'&browser='+browserName+
+		'&browser_ver='+fullVersion+
+		'&device_type='+device_id+
+		'&http_referer='+document.referrer+
+		'&'+timestamps
+		
+	    load_vtracking(data,0);
+		vidTData = data;
+}
+var vtid = 0;
+function load_vtracking(data,mode) {
+	if(mode==1){ data = vidTData+'&'+data; data +='&mode=1&id='+vtid; }
+	var url = siteUrl+'tracking/vid_tracking.php';
+    var http = new XMLHttpRequest();
+	http.open("POST", url, true);
+
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http.onreadystatechange = function() {
+		if(http.readyState == 4 && http.status == 200) {
+			 var responce = http.responseText;
+			 if(mode==0){ 
+			     setTimeout(function(){
+					resArr = responce.split("-:-");
+					vtid = resArr[0];
+					if(!locInfo || locInfo == null){
+					   createCookieRealTime('locInfo',resArr[1],7);	  
+					}
+				 }, 100); 
+			 }
+		}
+	}
+	http.send(data);
+}
+</script>	
+
+<!--<video tracking> -->
+	<script type="text/javascript" src="./ima3.js.download"></script>
+    <script type="text/javascript" src="./ads.js.download"></script>
+<script type="text/javascript" src="./player.js.download"></script>
+<div class="dbtb_videocustom" id="dbtb_videocustom">
+            <div class="w-later" id="dbtv_replay_icon">
+    <div class="w_m">
+      <div class="watch_div"> <a href="javascript:void(0);" title="Replay" onclick="replayVideo()">
+        <div class="watch-l"></div>
+        <p>Replay</p>
+        </a> </div>
+      <div class="v-more_div"> <a href="http://dbvideos.divyabhaskar.co.in/" title="Watch more" target="_blank">
+        <div class="v-more_v"></div>
+        <p>Watch more</p>
+        </a> </div>
+    </div>
+    <div class="vjabhi"><ul id="vjabhi"></ul></div>
+ </div>
+        <input type="hidden" name="video_rec" id="video_rec" value="">
+</div>
+
+<script>
+var loadChk=0,nextR=0,cli=0;
+function loadRecVideo(){
+ if(loadChk ==0 && showRec != 0){
+	var aurl = siteUrl+"recommendation/"+cat_id+"-"+chn_id+"-"+device+".html";
+	if(sec_track.search("videos-jab")>-1){
+	   aurl = aurl+"?jab=1&vid="+video_Id; 
+	}else{ 
+	   aurl = aurl+"?vid="+video_Id;
+	}
+	
+	var hra = new XMLHttpRequest();
+	hra.open("POST", aurl, true);
+    hra.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	hra.onreadystatechange = function() {
+		if (hra.readyState==4 && hra.status==200){
+		   var resArr = hra.responseText; 
+		   if(sec_track.search("videos-jab")>-1){
+			  D[G]("vjabhi").innerHTML = resArr;
+		   }else{
+		      D[G]("rec-list").innerHTML = resArr;
+		   }
+		   pushvideo(0);
+		   loadChk = 1;
+		}
+	}
+	hra.send();
+ }
+}
+
+var sim = '',nplay = hCount = checkVideoend = cancel = checkrec = 0,tmc=1,tmu='',tms=5,tout=''; 
+var ctx = cw = ch = '',al = 0,start = 4.72,diff;
+function endHandler(){
+	checkrec = 1;
+	nextR = 0;
+	chevt=1;
+	checkVideoend	= 1;
+	if(showRec == 1){		
+	    D[G]("timeup").innerHTML = tms;
+		if(hCount <6){ tmc = 1;
+		  tmu = setInterval(Timer, 1000);
+		}else{ dNon("timeupDiv",''); }
+		showSlate();
+		nplay = getRecId(); 
+		dBlk('r-play',''); dNon("r-close",'');
+		dBlk('dbtv_replay_video','video_counter-'+nplay);
+		ctx = D[G]('video_counter-'+nplay).getContext('2d');
+		al = 0; start = 4.72; cw = ctx.canvas.width; ch = ctx.canvas.height;
+		tout = setTimeout(function(){ recVideoPlay(nplay,0); }, 5000); 
+		window.clearTimeout(sim);
+		sim = setInterval(progressSim, 50);
+		resetBar();
+	}else{
+		showSlate();
+	}	
+}
+function Timer(){
+	 timesec = tms-tmc;
+	 if(timesec >=0){ D[G]("timeup").innerHTML = timesec; }
+	 tmc++;
+}
+function getRecId(){
+   	if(showRec==2){
+		var liArr = D[G]("vjabhi").getElementsByTagName("li");
+	}else{
+	   var liArr = D[G]("rec-list").getElementsByTagName("li");
+	}
+	for(var i = 0; i < liArr.length; i++) {
+		 var isClass = liArr[i].className;
+		 var isBlock = liArr[i].style.display; 
+         if((isBlock == 'block' || isBlock == 'inline-block') && isClass=='act'){
+		   return i;
+		   break;
+		 }
+	}
+}
+function showLi(){ 
+	if(showRec==2){
+		var liArr = D[G]("vjabhi").getElementsByTagName("li");
+	}else{
+	   var liArr = D[G]("rec-list").getElementsByTagName("li");
+	}
+	for(var i = 0; i < liArr.length; i++) {
+		 var isClass = liArr[i].className;
+		 var isBlock = liArr[i].style.display; 
+         if(isBlock == 'none' && isClass=='inact' && cli==0){
+		    if(i==3){ liArr[i].className = 'act lastact'; }else{ liArr[i].className = 'act'; }
+			if(showRec==2){
+			    liArr[i].style.display = 'inline-block';
+				liArr[i].className = 'act lastact';
+			}else{ liArr[i].style.display = 'block'; }
+			cli=1;
+		 }
+	}
+}
+function recVideoPlay(cnext,check){
+	 if(cnext==''){ cnext = D[G]("shnext").value; dNon('vnext',''); rec_next = 1; }	
+	 countnext = cnext;
+	 if(check=='1'){ hideSlate(); clearTimeout(sim); clearTimeout(tout); checkrec=0;}
+	 var valRes = D[G]("vurl_"+countnext).value; 
+	 var resArr = valRes.split("::");
+	 
+	 title = resArr[0]; 
+	 poster = resArr[1]; 
+	 videoURL = resArr[2]; 
+	 video_Id = resArr[3]; 
+	 cat_id = resArr[4];
+	 fshare = resArr[5];
+	 sec_id = resArr[6];
+	 prov_id = resArr[7];
+	 VV = resArr[8];
+	 sec_city = resArr[10];
+	 
+	 slugData = resArr[9];
+	 var slugArr = slugData.split("-&-");
+	 dblogo = slugArr[0]; lastIntro = slugArr[4] ; dur1 = slugArr[5]; dur2 = slugArr[6]; dur3 = slugArr[7]; 
+	 var sl = 1; for(sl = 1; sl<4; sl++){ if(slugArr[sl] !=''){ D[G]("video-slug-"+sl).innerHTML = slugArr[sl]; } }
+	
+
+	 rcqly = readCookie('cqly');
+	 changeParentInfo(video_Id,title,fshare,VV); 
+	 if(rcqly){  
+	   cqlyArr = rcqly.split('-');
+	   videoURL = videoURL.replace('200',cqlyArr[0]);
+	 }
+	 sendPostMsg('Next Video',1);
+	
+	 if(isAdBlock==true || ads !='' ){ setSrc(videoURL); }else{ setSrc(videoURL,0); }
+	 if(device=='w'){ vid.setAttribute('poster',poster); }
+	 if(check=='1'){ autoPlayNext(check); }
+	 
+	 return false;
+}
+function autoPlayNext(check){  
+	 rec_pos = Number(countnext)+1;
+	 if(showRec==1){
+	 	hideSlate();
+		dNon("video_counter-"+countnext,'r-play'); 
+	    window.clearTimeout(sim); window.clearTimeout(tmu);
+	 }
+	
+	 replay = 0; rec=1; nextR = 0; cli=0;
+	 sBgp(btnPlay,"0 -32px");
+	 if(hCount <6 ){
+		 dNon("reclist-"+countnext,'');
+		 D[G]("reclist-"+countnext).className = "act";
+		 hCount++;
+		 showLi();
+	 }else{
+	     D[G]("reclist-"+countnext).className = "inact";	 
+	 }
+	 if(isAdBlock==true || ads !='' ){ playPause(0); }else{ intRecReq(check); }
+	 pushvideo(1);
+}
+
+function replayVideo(){	
+	clearTimeout(sim); clearTimeout(tout);
+	replay = 1;
+	if(isAdBlock==true || ads !=''){ playPause(0); }else{ intRecReq(2); }
+	hideSlate();
+}
+function hideSlate(){
+	D[G]("dbtb_videocustom").style.zIndex = '4';
+	dNon('dbtb_videocustom','');
+}
+function showSlate(){
+	D[G]("dbtb_videocustom").style.zIndex = '4';
+	dBlk('dbtb_videocustom','');
+}
+function progressSim(){
+	diff = ((al / 100) * Math.PI*2*10).toFixed(2);
+	ctx.clearRect(0, 0, cw, ch);
+	ctx.lineWidth = 4;
+	ctx.fillStyle = '#007ddb';
+	ctx.strokeStyle = "#007ddb";
+	ctx.textAlign = 'center';
+	ctx.beginPath();
+	if(device=='m'){
+	  ctx.arc(21, 21, 19, start, diff/10+start, false);
+	}else{
+	  ctx.arc(29, 29, 26, start, diff/10+start, false);
+	}
+	ctx.stroke();
+	if(al >= 100){
+        autoPlayNext(0);
+		clearTimeout(sim);
+		al = 0;
+	}
+	al++;
+}
+
+D[G]('nextRec')[E]('click',function(){ 
+   if(loadChk==1 && showRec==1){
+	  if(nextR==0){
+		vid.pause();
+		cancel = 1;
+		showSlate();
+		dNon("",'timeupDiv');
+		//dNon("dbtv_replay_icon",'');
+	    dBlk('dbtv_replay_video','');
+		nextR = 1;
+	  }
+	  dBlk('r-close','');
+   }
+},false);
+
+if(device=='w' && showRec == 1){ 
+   D[G]('r-close')[E]('click',function(){ 
+	   sBgp(btnPlay,"0 -32px"); 
+	   replay = 0; 
+	   closeid = D[G]('sicons_div').style.display; 
+	   if(closeid=='none'){ vid.play(); }else{ vid.pause(); } 
+	   hideSlate(); nextR=0; 
+   },false);
+} 
+
+function pushvideo(pvidc){
+	 if(pvidc==1){ pvidc = getRecId(); }
+	 console.log('pvidc-'+pvidc);
+	 var valRes1 = D[G]("vurl_"+pvidc).value; 
+	 var resArr1 = valRes1.split("::");
+	 D[G]("shnext").value = pvidc;
+     
+	 D[G]('npush-title').innerHTML = resArr1[0];
+	 D[G]('npush-img').src = resArr1[1]; 
+}
+function changeParentInfo(video_Id,title,fshare,VV){
+   var dpost = 'recplay-::-'+video_Id+'-::-'+title+'-::-'+fshare+'-::-'+VV;
+   sendPostMsg(dpost,0);
+}
+</script>
+
+
+
+<script>
+
+ var datalog = "browser="+browserName;
+	datalog += "&browser_ver="+fullVersion;
+	datalog += "&os="+os;
+	datalog +="&sec_track="+sec_track;
+	datalog +="&ref_d="+ref_d;
+	datalog += "&device="+device_id; 
+	datalog += "&video_id="+video_Id;
+	datalog += "&channel="+chn_id;
+	datalog += "&domain="+device;
+	datalog += "&p_sessionID="+playerUID;
+	datalog += "&sFlag="+sFlag;
+	
+datalog += '&'+Math.random();
+
+var urllog = siteUrl+"tracking/video_user_log.php?callback=parseRequest&"+datalog;
+setScriptSrc(urllog);
+function setScriptSrc(url){
+   var script = document.createElement('script');
+   script.setAttribute('src', url);
+   document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+if (navigator.userAgent.indexOf('Opera Mini') != -1){
+	document.getElementById("oplay").style.display = "block";
+	setTimeout(function(){ document.getElementById("sicons_div").style.display = "none"; }, 600);
+	var d = document.getElementById("playerBox");
+	d.className += " minvheight";
+}
+</script>
+<input type="hidden" name="adsfind" id="adsfind" value="0">
+
+<iframe name="google_video_inner_static_iframe" id="google_video_inner_static_iframe" src="./saved_resource(7).html" style="height: 0px; width: 0px; display:none"></iframe></body></html>

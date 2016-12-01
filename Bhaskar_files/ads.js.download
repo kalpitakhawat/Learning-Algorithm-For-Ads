@@ -1,0 +1,381 @@
+var adsM_,adsL_,adDisplayContainer,intervalTimer,imaObj = google.ima,vid,check=0,vasturl,adtype,remtime,aderr,adse=0,rpvp=0,adserr=0,spTest=0,callInt=0,callot=0,vt_id=1;
+var W=window,D=W.document,G='getElementById';
+var ads_id = source = format =0;
+E=W.addEventListener?'addEventListener':'attachEvent';
+
+function init() {
+  isAdBlock = false;
+  vid	   = D[G]('videoId');
+  btnPlay  = D[G]("btnPlay");
+  vid[E]("click",intPlayReq,false);
+  btnPlay[E]("click",intPlayReq,false);
+  D[G]('sicons_div')[E]('click',intPlayReq,false);
+
+  vasturl2 = vasturl1.replace('#time1#',timestamps);
+  vasturl = vasturl2.replace('#time1#',timestamps); 
+  //console.log(vasturl);
+  if(autoplay==1){ if(sec_track=='videos-nws'){ setTimeout(function(){ requestAds(); }, 3000); }else{  requestAds(); } }
+}
+function intPlayReq(chkrec){
+    if(check==0 || replay==1){ if(check !=0){ D[G]('adContainer').innerHTML = ''; } vid.paused; requestAds(); }
+}
+function intRecReq(rectype){
+   vasturl2 = vasturl1.replace('#time1#',timestamps);
+   vasturl = vasturl2.replace('#time1#',timestamps); 
+   vasturl = vasturl+'&cust_params=videoplay%3dnext_video'; 
+
+   if(showRec==2){
+      if(chn_id =='960'){
+	    if(rectype==2){
+		   rpvp = 1;
+		   vasturl = vasturl.replace('DVB_Video_Ad_Code','DVB_video_Janiye_Abhi'); 
+		}else{
+		   vasturl = vasturl.replace('DVB_video_Janiye_Abhi','DVB_Video_Ad_Code'); 
+		}
+	  }else{
+		if(rectype==2){
+			rpvp = 1;
+		    vasturl = vasturl.replace('DB_Video_Ad_Code','db_video_Janiye_Abhi'); 
+		}else{
+			vasturl = vasturl.replace('db_video_Janiye_Abhi','DB_Video_Ad_Code'); 
+		}
+	  }
+   }
+   D[G]('adContainer').innerHTML = ''; 
+   vid.paused; requestAds(); 
+}
+function createAdDisplayContainer() {
+    adDisplayContainer = new imaObj.AdDisplayContainer(D[G]('adContainer'), vid);
+}
+
+function initResetPlayer(){
+  replay=0; check=1;
+  D[G]('loader').style.display='block';
+  D[G]('loader1').style.display='none';
+  D[G]('adContainer').style.display = "block"; 
+}
+
+function requestAds() {
+  ads_id = 0;
+  source = 0;
+  format = 0;
+  //---third party videos paramerter-- 
+  var provIdArr = { '10': 'JK', '11': 'GG', '12': 'Sonia', '13': 'LBF', '14': 'VP','15': 'ST','16': 'TG','17': 'ENV','18': 'ABG' ,'19': 'RK','20': 'PP','21': 'ASH','22': 'IL','23': 'GMM','25': 'TZP','26': 'UNG','27': 'UNG','28': 'AT','29': 'NK','30': 'QK','31':'PM','32':'DT','33':'SA','34':'SF','35':'BCT','36':'PK','37':'RT','38':'CT','39':'TSC','40':'PB','41':'KS','42':'LF','43':'FC','44':'APT'};  
+  if(typeof provIdArr[prov_id] !== 'undefined' && provIdArr[prov_id] !== null) {
+	  var provId = provIdArr[prov_id];
+      vasturl = vasturl+'&cust_params=TPC%3d'+provId; 
+  }
+  if(sec_track=='videos-m-rft' || sec_track=='videos-rft'){ vasturl = vasturl+'&cust_params=TPC%3dRFT'; }
+  //vasturl = vasturl+'&height='+D[G]('playerBox').clientHeight+'&width='+D[G]('playerBox').clientWidth;
+
+  initResetPlayer();
+  createAdDisplayContainer();
+  adDisplayContainer.initialize();
+  //vid.load();
+  adsL_ = new imaObj.AdsLoader(adDisplayContainer);
+  adsL_.getSettings().setVpaidMode(google.ima.ImaSdkSettings.VpaidMode.INSECURE);
+  adsL_[E](imaObj.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,onAdsManagerLoaded,false);
+  adsL_[E](imaObj.AdErrorEvent.Type.AD_ERROR,onAdError,false);
+  var adsRequest = new imaObj.AdsRequest();
+	  adsRequest.adTagUrl = vasturl;
+	  adsRequest.linearAdSlotWidth = 400
+	  adsRequest.linearAdSlotHeight = 300;
+
+	  adsRequest.nonLinearAdSlotWidth =  640;
+	  adsRequest.nonLinearAdSlotHeight = 150;
+      
+	  adsL_.requestAds(adsRequest);
+}
+
+function onAdsManagerLoaded(adsManagerLoadedEvent) {
+  var adsRenderingSettings = new imaObj.AdsRenderingSettings();
+  adsRenderingSettings.restoreCustomPlaybackStateOnAdBreakComplete = true;
+ 
+  if(sec_track.search("videos-jab")>-1){
+	 adsRenderingSettings.loadVideoTimeout = 60000;
+  }else{
+	 if(chn_id =='521'){ 
+		adsRenderingSettings.loadVideoTimeout = 60000;
+	 }else{
+	    adsRenderingSettings.loadVideoTimeout = 60000;
+	 }
+  } 
+
+  adsM_ = adsManagerLoadedEvent.getAdsManager(vid, adsRenderingSettings);
+
+  adsM_[E](imaObj.AdErrorEvent.Type.AD_ERROR,onAdError);
+  adsM_[E](imaObj.AdEvent.Type.CONTENT_PAUSE_REQUESTED,onContentPauseRequested);
+  adsM_[E](imaObj.AdEvent.Type.CONTENT_RESUME_REQUESTED,onContentResumeRequested);
+  adsM_[E](imaObj.AdEvent.Type.ALL_ADS_COMPLETED,onAdEvent);
+  
+  var events = [imaObj.AdEvent.Type.FIRST_QUARTILE,
+                imaObj.AdEvent.Type.SKIPPED,
+                imaObj.AdEvent.Type.SKIPPABLE_STATE_CHANGED,
+                imaObj.AdEvent.Type.CLICK,
+                imaObj.AdEvent.Type.MIDPOINT,
+                imaObj.AdEvent.Type.THIRD_QUARTILE,
+                imaObj.AdEvent.Type.LOADED,
+                imaObj.AdEvent.Type.STARTED,
+                imaObj.AdEvent.Type.COMPLETE,
+                imaObj.AdEvent.Type.DURATION_CHANGE,
+                imaObj.AdEvent.Type.IMPRESSION,
+                imaObj.AdEvent.Type.PAUSED,
+                imaObj.AdEvent.Type.RESUMED,
+                imaObj.AdEvent.Type.USER_CLOSE,
+                imaObj.AdEvent.Type.VOLUME_CHANGED,
+                imaObj.AdEvent.Type.VOLUME_MUTED];
+  for (var index in events) {
+    adsM_[E]( events[index],onAdEvent,false);
+  }
+  try {
+    adsM_.init(645, 360, imaObj.ViewMode.FULLSCREEN);
+    adsM_.start();
+  } catch (adError) {
+	 vidPlay(0);
+  }
+}
+var ad,adh=0;
+function onAdEvent(adEvent){ 
+  D[G]('adContainer').style.display = "block";
+  D[G]('loader').style.display='none';
+
+  ad = adEvent.getAd();   
+  adh = ad.getHeight();
+  switch (adEvent.type) {
+     case imaObj.AdEvent.Type.LOADED:
+      if (!ad.isLinear()) {
+          vidPlay(0);
+      }
+	  funOnLoaded(ad);
+      break;
+     case imaObj.AdEvent.Type.STARTED:
+	  adse = 1;
+	  if (ad.isLinear()) {
+          intervalTimer = setInterval(
+            function() {
+              remtime = adsM_.getRemainingTime();
+			},
+            300);
+	  }
+      break;
+	 case imaObj.AdEvent.Type.IMPRESSION:
+       break;
+     case imaObj.AdEvent.Type.COMPLETE:
+	   ads_tracking('completed=1',1);
+	   //setTimeout(function(){ adsM_.destroy(); }, 5000);
+       D[G]('adContainer').style.display = "none"; D[G]("adContainer").className = 'adcnone';
+	   console.log('cp');
+	   vidPlay(3);
+       break;
+     case imaObj.AdEvent.Type.FIRST_QUARTILE:
+	   ads_tracking('firstquartile=1',1);
+       break;
+     case imaObj.AdEvent.Type.MIDPOINT:
+	   ads_tracking('midpoint=1',1);
+       break;
+     case imaObj.AdEvent.Type.THIRD_QUARTILE:
+	   ads_tracking('thirdquartile=1',1);
+       break; 
+     case imaObj.AdEvent.Type.SKIPPED:
+	    var ctm = ad.getDuration()-remtime;
+		var datask = 'skipped=1&skip_duration='+ctm;
+	    ads_tracking(datask,1);
+		adsM_.destroy();
+	    vidPlay(0);
+       break; 
+     case imaObj.AdEvent.Type.CLICK:
+	   ads_tracking('click=1',1);
+	   if(adh < 1){
+		  //adsM_.destroy();
+	      //vidPlay(0);
+	   }
+       break;
+     case imaObj.AdEvent.Type.SKIPPABLE_STATE_CHANGED:
+       break;
+     case imaObj.AdEvent.Type.DURATION_CHANGE:
+       break;
+	 case imaObj.AdEvent.Type.PAUSED:
+       break;
+     case imaObj.AdEvent.Type.RESUMED:
+       break;
+	 case imaObj.AdEvent.Type.USER_CLOSE:
+	   if(adtype !=2){  
+	     ads_tracking('skipped=1',1);
+	     vidPlay(0);
+	   }
+       break;
+	 case imaObj.AdEvent.Type.VOLUME_CHANGED:
+       break;
+	 case imaObj.AdEvent.Type.VOLUME_MUTED:
+       break;  
+  } 
+}
+
+function funOnLoaded(ad){
+	initResetPlayer();
+	var format1 = ad.getContentType();
+	var chkl = format1.search("image");
+	var chk2 = format1.search("text");
+	adtype = 1;
+	if(chkl == 0 || chk2 == 0){ adtype = 2; } 
+	format = encodeURIComponent(format1);
+	var adtitle = ad.getTitle();
+	if(adtype !=1 || adtitle=='text' || format=='text'){
+	   D[G]("adContainer").className = 'ad-block';
+	   adtype = 2;
+	}else{
+	   D[G]("adContainer").className = 'all_ad';
+	   adtype = 1;
+	}
+	ads_id = ad.getAdId();
+	source = encodeURIComponent(ad.getAdSystem());
+	var durtm = ad.getDuration();
+	if(durtm >= 30){ adsevent = 4; }else if(durtm >= 20){ adsevent = 3; }else if(durtm >= 10){ adsevent = 2; }else{ adsevent = 1; }
+	var adsData = 
+		'adid='+ads_id+
+		'&adtype='+adtype+
+		'&title='+encodeURIComponent(ad.getTitle())+
+		'&description='+encodeURIComponent(ad.getDescription())+
+		'&source='+source+
+		'&bandwidth='+adsevent+
+		'&height='+adh+
+		'&width='+ad.getWidth()+
+		'&format='+format+
+		'&duration='+ad.getDuration();
+	
+	ads_tracking(adsData,0);
+	if(sec_track.search("videos-jab")>-1 && chkl !=0 && rec !=1 && adtype ==1){ 
+		if(D.getElementsByClassName('ac_mute').length >0){ adsM_.setVolume(0); } 
+		D[G]('ac_vol').style.display='block'; 
+	}
+}
+function ads_tracking(adsData,cmode){
+    
+	var tts = '&vt_id='+vt_id; 
+	if(cmode==1){
+	  adsData += '&id='+adid+'&mode=1'+tts;
+	}else{
+	  if(cmode==2){
+	     adsData += '&adid='+ads_id+'&source='+source+'&format='+format;
+	  }
+	  //if(callot==1){ adid = '1012';}
+
+	  adsData += tts+
+		'&adunit='+encodeURIComponent(callunit)+
+		'&adurl='+encodeURIComponent(vasturl)+
+		'&sec_track='+sec_track+
+		'&video_id='+video_Id+
+		'&browser='+encodeURIComponent(browserName)+
+		'&browser_ver='+fullVersion+
+		'&domaintype='+device+
+		'&os='+os+
+		'&screen='+screen.width+'X'+screen.height+
+		'&device_type='+device_id+
+		'&channel_id='+chn_id+
+		'&ref_d='+ref_d+
+		'&replay='+cend+
+		'&rec='+rec+ 
+		'&'+timestamps
+	}
+	var adsUrl = siteUrl+'tracking/ads_tracking.php';
+	var http = new XMLHttpRequest();
+	http.open("POST", adsUrl, true);
+
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http.onreadystatechange = function() {
+		if(http.readyState == 4 && http.status == 200) {
+			var responce = http.responseText;
+	        if(cmode !=1){ adid = responce; }
+		}
+	}
+	http.send(adsData);
+}
+
+D[G]('ac_vol')[E]('click', function(e){
+	var chclass = D.getElementsByClassName('ac_mute');
+	if(chclass.length > 0) {
+	   adsM_.setVolume(0.9);
+	   D[G]('ac_vol').className = "ac_volumn";	
+	}else{
+	   adsM_.setVolume(0);
+	   D[G]('ac_vol').className = "ac_mute";	
+	}
+}, false);
+
+function vidPlay(checkvp){
+	
+	vid_tracking(video_Id);
+	ads_tracking('bwkbps=1',1);
+
+	D[G]('ac_vol').style.display='none';
+	D[G]('skSld').style.left = '0%';
+	D[G]('progress-amount').style.width = '0%';
+	chjab = 1;
+	if(sec_track.search("videos-jab")>-1 && checkvp==1 && rec !=1 && rpvp !=1){
+		D[G]('loader').style.display='none'; 
+		jabads = 1;
+	}else{
+		jabads = 0;
+		startHandler();
+	    if(sec_track.search("videos-jab")>-1 && chn_id =='521'){ 
+			//if(sec_track=='videos-jab' || sec_track=='videos-jab-bolly') { videoMute(); } 
+			if(chpevnt ==1 || rec ==1 || rpvp ==1){ vid.play(); }  
+		}else{ 
+			if(sec_track.search("videos-jab")>-1 && chn_id =='960'){ 
+				//if(sec_track=='videos-jab') { videoMute(); }
+				if(chpevnt ==1){ vid.play(); }
+			}else{ vid.play(); } 
+		}
+		D[G]('sicons_div').style.display = "none";
+	}
+	if(adtype !=2 || checkvp==3 || adh < 1){ D[G]('adContainer').style.display = 'none'; D[G]("adContainer").className = 'adcnone'; D[G]('ac_vol').style.display='none'; }
+}
+function videoMute(){
+   vid.muted = true; vid.volume = 0; sBgp(mBtn,"-26px -64px"); wSet('vol-amt','0'); D[G]('volSld').style.left = 0+'px';
+}
+function onAdError(adErrorEvent){ 
+   var getE = adErrorEvent.getError();
+   objE = JSON.stringify(getE);
+   var getE1 = objE.split(',"'); 
+   var errAr1 = getE1[0].split(":"); 
+   var errAr2 = getE1[1].split(":"); 
+   var errAr3 = getE1[2].split(":"); 
+   var errS = 'error_msg='+encodeURIComponent(errAr1[1])+'&error_code='+errAr2[1]+'&error_type='+errAr3[1].replace('}','');
+   
+   ads_tracking(errS,2); 
+   vidPlay(0);
+   if(adh < 1 || typeof adh == 'undefined' || errAr2[1] == 901 || errAr2[1] == 1009 || errAr2[1] == 303){
+	   D[G]('adContainer').innerHTML = '';
+	   D[G]('adContainer').style.display = "none";
+	   D[G]("adContainer").className = 'adcnone';
+	   D[G]('ac_vol').style.display='none';
+   }
+}
+
+function isHidden(el) { return (el.offsetParent === null) }
+function adsEvent(val){
+  var h_el = D[G]("adContainer");
+  var hidd = isHidden(h_el);
+  if(hidd == false){      
+	  if(val==1){
+	     adsM_.pause(); 
+	  }else if(val==2){
+	     adsM_.resume(); 
+	  }else if(val==3){
+	      adsM_.destroy();
+	  }else if(val==4){
+	      adsM_.setVolume(0); 
+	  }else if(val==5){
+	      adsM_.setVolume(0.7);  
+	  }
+   }
+} 
+
+function onContentPauseRequested() {
+   vid.pause();
+}
+
+function onContentResumeRequested() {
+   
+}
+init();

@@ -1,0 +1,195 @@
+* { margin:0; padding:0}
+html{font-family:Gujarati_WEB_Intro_Test,Arial,Helvetica,sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Gujarati_WEB_Intro_Test,Arial,Helvetica,sans-serif;font-size:14px;color:#000}
+*{margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+a{background:0 0;outline:0;focus:none}
+a:active,a:hover{outline:0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:700}
+dfn{font-style:italic}
+h1{font-size:2em;margin:.67em 0}
+img{border:0;}
+a{color:#005689;text-decoration:none}
+a:hover{text-decoration:underline}
+li,ul{list-style:none;margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-weight:400}
+#results_data h4{font: 17px/24px Gujarati_Web_Head_Test_exp,Arial,Helvetica,sans-serif;text-transform:uppercase; float:left; width:100%; margin:0;}
+#results_data h4 span { font-family:'Calibri'; font-weight:bold} 
+#results_data {float:left;}
+#results_data span.rashi-date {font:700 12px/18px 'Segoe UI'Calibri,Helvetica,sans-serif; color:#333333;}
+.ajaxloader{background:url(http://i10.dainikbhaskar.com/article-v4/bhaskar-article/images/ajaxloader.gif) no-repeat 50% center #000;display:none;height:100%;opacity:.5;position:absolute;top:0;width:100%;filter: alpha(opacity=50); z-index:999;}
+
+.shubh_muhu{width:290px;padding:2px 5px 5px; float:left}
+.rashifal{width:100%;/*height:269px;*/float:left}
+.rashifal h3{font:bold 26px/36px Arial;}
+.rashifal h3 a  { color:#000; text-decoration:none}
+.rashifal h3 a:hover,.eventTitleCLS:hover { color:#005689; text-decoration:underline}
+.rashifal .top_tab{width:100%;margin:0;padding:0;height:23px;background:#432982;float:left; position:relative; z-index:1;}
+.rashifal .top_tab ul{list-style:none}
+.rashifal .top_tab ul li{float:left;display:block;position:relative; z-index:1;}
+.rashifal .top_tab ul li a{display:block;float:left;font:700 12px/22px Arial,Helvetica,sans-serif;color:#fff;margin:1px 10px 0;text-decoration:none;}
+.rashifal .top_tab ul li a:hover,.rashifal .top_tab ul li a.active{color:#fdff00; text-decoration:none;}
+.banner_300x100{width:300px;height:100px;margin:20px 0}
+.rashifal .top_tab ul li a span{display:none}
+.rashifal .top_tab ul li a.active span{background:url(http://i9.dainikbhaskar.com/dainikbhaskar2010/jeevan_mantra_2015/images/arrwo-b.jpg) left top no-repeat;bottom:-3px;display:block;height:4px;left:50%;position:absolute;width:8px; margin-left:-4px; z-index:99}
+ul.tabs_rashi{margin:7px 0 0;padding:0;float:left;list-style:none;width:100%}
+ul.tabs_rashi li{float:left;margin:0;cursor:pointer;padding:0 6px;line-height:17px;color:#000;overflow:hidden;position:relative;background:url(http://i9.dainikbhaskar.com/dainikbhaskar2010/jeevan_mantra_2015/images/sep-line-rashi.jpg) right center no-repeat;}
+ul.tabs_rashi li.noBorder {background:none;}
+ul.tabs_rashi li a{color:#000}
+ul.tabs_rashi li a:hover{color:#000}
+ul.tabs_rashi li.active{background:#f0f0f0;color:#000;border-radius:6px 6px 0 0;display:block;}
+.tab_container{border-top:none;clear:both;float:left;width:100%; margin-bottom:5px;}
+.tab_content{display:none}
+#results_data p {font:14px/20px Gujarati_WEB_Intro_Test,Arial,Helvetica,sans-serif}
+.bottom_tab {float: left;  position: relative;}
+.readmore{padding-right:7px;background:url(http://i9.dainikbhaskar.com/dainikbhaskar2010/jeevan_mantra_2015/images/sprite.png) no-repeat right -155px;}
+.eventTitleCLS {color:#000;font:bold 12px Arial,Helvetica,sans-serif;text-decoration:none; display:inline-block}
+.readmore:hover {background-position:right -351px; text-decoration:underline}
+.safari .read-more {background-position: right -151px}
+.safari span.read-more:hover, .safari .read-more a:hover {background-position: right -349px;}
+.safari .eventTitleCLS {background-position: right -157px;}
+.safari .container .content .eventTitleCLS:hover {background-position: right -353px;}
+.ie8 .eventTitleCLS {background-position:right -158px}
+.ie8 .eventTitleCLS:hover {background-position: right -354px;}
+
+.bx-viewport ul li {background:url(http://i9.dainikbhaskar.com/dainikbhaskar2010/jeevan_mantra_2015/images/rashi-sprite.png) no-repeat ;}
+#Rashifal_Aries { background-position: 0 0}
+#Rashifal_Aries.active { background-position: -61px 0}
+
+#Rashifal_Taurus { background-position:0 -60px}
+#Rashifal_Taurus.active { background-position:-61px -60px;}
+
+#Rashifal_Gemini { background-position:0 -121px;}
+#Rashifal_Gemini.active { background-position:-61px -121px;}
+
+#Rashifal_Cancer { background-position:0 -182px;}
+#Rashifal_Cancer.active { background-position:-61px -182px;}
+#Rashifal_Leo { background-position: 0 -243px;}
+#Rashifal_Leo.active { background-position:-61px -243px;}
+#Rashifal_Virgo { background-position:0 -304px;}
+#Rashifal_Virgo.active { background-position:-61px -304px;}
+
+#Rashifal_Libra { background-position: 0 -365px;}
+#Rashifal_Libra.active { background-position:-61px -365px;}
+#Rashifal_Scorpio { background-position:0 -426px;}
+#Rashifal_Scorpio.active { background-position:-61px -426px;}
+#Rashifal_Sagittarius { background-position:0 -487px;}
+#Rashifal_Sagittarius.active { background-position:-61px -487px;}
+#Rashifal_Capricorn{ background-position:0 -548px;}
+#Rashifal_Capricorn.active { background-position:-61px -548px}
+#Rashifal_Aquarius{ background-position:0 -609px}
+#Rashifal_Aquarius.active { background-position:-61px -609px;}
+#Rashifal_Pisces{ background-position:0 -670px}
+#Rashifal_Pisces.active { background-position:-61px -670px}
+
+/*tarot*/
+#Tarrot_Aries { background-position: 0 0}
+#Tarrot_Aries.active { background-position: -61px 0}
+#Tarrot_Taurus { background-position:0 -60px}
+#Tarrot_Taurus.active { background-position:-61px -60px;}
+#Tarrot_Gemini { background-position:0 -121px;}
+#Tarrot_Gemini.active { background-position:-61px -121px;}
+#Tarrot_Cancer { background-position:0 -182px;}
+#Tarrot_Cancer.active { background-position:-61px -182px;}
+#Tarrot_Leo { background-position: 0 -243px;}
+#Tarrot_Leo.active { background-position:-61px -243px;}
+#Tarrot_Virgo { background-position:0 -304px;}
+#Tarrot_Virgo.active { background-position:-61px -304px;}
+#Tarrot_Libra  { background-position: 0 -365px;}
+#Tarrot_Libra.active  { background-position:-61px -365px;}
+#Tarrot_Scorpio { background-position:0 -426px;}
+#Tarrot_Scorpio.active { background-position:-61px -426px;}
+#Tarrot_Sagittarius { background-position:0 -487px;}
+#Tarrot_Sagittarius.active { background-position:-61px -487px;}
+#Tarrot_Capricorn { background-position:0 -548px;}
+#Tarrot_Capricorn.active { background-position:-61px -548px}
+#Tarrot_Aquarius { background-position:0 -609px}
+#Tarrot_Aquarius.active { background-position:-61px -609px;}
+
+#Tarrot_Pisces { background-position:0 -670px}
+#Tarrot_Pisces.active { background-position:-61px -670px}
+
+/*numerology*/
+#Numerology_1 { background-position:0 -731px;}
+#Numerology_1.active {background-position:-61px -731px;}
+
+#Numerology_2{background-position:0 -792px;}
+#Numerology_2.active {background-position:-61px -792px;}
+
+#Numerology_3{background-position:0 -854px;}
+#Numerology_3.active {background-position:-61px -854px}
+
+#Numerology_4{background-position: 0 -916px}
+#Numerology_4.active {background-position:-61px -916px;}
+
+#Numerology_5{background-position:0 -978px;}
+#Numerology_5.active {background-position:-61px -978px;}
+
+#Numerology_6{background-position:0 -1040px;}
+#Numerology_6.active {background-position:-61px -1040px;}
+
+#Numerology_7{background-position:0 -1103px}
+#Numerology_7.active {background-position:-61px -1103px;}
+
+#Numerology_8{background-position:0 -1164px;}
+#Numerology_8.active {background-position:-61px -1164px;}
+
+#Numerology_9{background-position:0 -1226px;}
+#Numerology_9.active {background-position:-61px -1226px;}
+
+
+
+
+/*  BX slider  */
+.flicker665 {width: 665px;}
+.flicker-main {width:246px;  padding: 2px 22px; float:none; margin:0; clear:both; position:relative; background:#f0f0f0;}
+.flicker-main .bx-viewport {height:61px !important;}
+.flicker-main h4 {font:17px/27px Gujarati_Web_Head_Test_exp,Arial}
+.bxslider {display:block; padding:0px 20px 5px 20px; position:relative;}
+.flicker665 .bx-pager {background: none repeat scroll 0 0 #000;color: #fff;padding: 3px 8px;right: 10px;top: 10px;font-family: Arial,Helvetica,sans-serif;font-size: 11px;font-weight: bold;height: 16px;overflow: hidden;position: absolute;}
+.flicker665 .flicker .bx-next, .flicker665 .flicker .bx-prev {height: 76px;margin-top: -40px;width: 45px;}
+ul.bxslider  {width: 100%; margin:0; padding:0 0 0 0; height:64px; overflow:hidden;}
+ul.bxslider li {list-style:none;  height:56px !important; text-align:center; width:56px !important; margin:2px 6px 0 0 !important; padding:0; display:inline-block; cursor:pointer; text-indent:-9999px; }
+ul.bxslider li a {float:left; display:block; height:56px; width:56px; }
+ul.bxslider li a.active {/*background:url(../images/sprite-big.png)-244px -188px no-repeat; */}
+ul.bxslider li img {/*padding:8px 7px;*/}
+ul.bxslider li:last-child{margin:0;}
+.bx-pager.bx-default-pager { display: none; } 
+.bx-controls-direction .bx-prev, .bx-controls-direction .bx-next {height: 47px;margin-top: -43px;position: absolute;text-indent: -10000px;top: 50%;width: 28px;z-index: 999;}
+.bx-controls-direction .bx-prev {background:url(http://i9.dainikbhaskar.com/dainikbhaskar2010/jeevan_mantra_2015/images/prev.jpg) 0 0 no-repeat; left:-16px; }
+.bx-controls-direction .bx-next {background:url(http://i9.dainikbhaskar.com/dainikbhaskar2010/jeevan_mantra_2015/images/next.jpg) 0 0 no-repeat; right:0px;}
+.bx-controls-direction{position:absolute; width:97%;}
+/*  End Bx slider  */
+.bx-viewport ul {display:block; padding:0px 20px 5px 20px; position:relative;}
+.flicker665 .bx-pager {background: none repeat scroll 0 0 #000;color: #fff;padding: 3px 8px;right: 10px;top: 10px;font-family: Arial,Helvetica,sans-serif;font-size: 11px;font-weight: bold;height: 16px;overflow: hidden;position: absolute;}
+.flicker665 .flicker .bx-next, .flicker665 .flicker .bx-prev {height: 76px;margin-top: -40px;width: 45px;}
+.bx-viewport ul  {width: 100%; margin:0; padding:0 0 0 0; height:64px; overflow:hidden;}
+.bx-viewport ul li {list-style:none;  height:56px !important; text-align:center; width:56px !important; margin:2px 6px 0 0 !important; padding:0; display:inline-block; cursor:pointer; text-indent:-9999px; }
+.bx-viewport ul li a {float:left; display:block; height:56px; width:56px; }
+.bx-viewport ul li a.active {/*background:url(../images/sprite-big.png)-244px -188px no-repeat; */}
+.bx-viewport ul li img {/*padding:8px 7px;*/}
+.bx-viewport ul li:last-child{margin:0;}
+.bx-controls-direction a.bx-next.disabled,.bx-controls-direction .bx-prev.disabled {opacity:.2;filter: alpha(opacity=20); cursor:default;}
+.shubh-tab{float:left; background:#fff; height:35px; border-bottom:2px solid #d5d5d5; width:300px;}
+.shubh-tab ul{} 
+.shubh-tab ul li{float:left; line-height:35px; height:35px; border-right:1px solid #d7d7d7}
+.shubh-tab ul li a{font:18px/35px Gujarati_Web_Head_Test_exp,Arial,Helvetica,sans-serif; padding:0px; color:#000; text-decoration:none; height:35px;}
+.shubh-tab ul li:hover, .shubh-tab ul li.select{background:url(http://i10.dainikbhaskar.com/dainikbhaskar2010/images/rashifal-home-widget/shubh-tab-hbg.jpg) right #e9e7ea no-repeat;}
+.shubh-tab li.fi, .shubh-tab li.se, .shubh-tab li.th{text-align:center;}
+.shubh-tab li.fi{width:92px;}
+.shubh-tab li.se{width:98px;}
+.shubh-tab li.th{width:108px; border:none;}
+#results_data h5.rashi-date{font-family:"Segoe UI", Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#333333; margin-bottom:6px;}
+.rashifal-home-rating{background:url(http://i10.dainikbhaskar.com/dainikbhaskar2010/images/rashifal-home-widget/rashifal-score-bg.jpg) repeat-x; height:25px; border:1px solid #dfdfdf; width:288px; float:left; margin-top:12px; line-height:25px;}
+.rashifal-home-rating h1{font-size:14px; margin:0px; padding:0px 9px 0px 9px; font-family:Gujarati_Web_Head_Test_exp,Arial,Helvetica,sans-serif; border-right:1px solid #dfdfdf; color:#000; float:left; line-height:25px;}
+.rashifal-home-rating .star{float:left; height:25px; border-left:1px solid #fff;}
+.rashifal-home-rating .star img{margin:5px 0px 0px 9px;}
+#results_data h4.ank_sign {font-family:Arial,Helvetica,sans-serif; font-weight:bold;}
+.rashifal_home_widgets {width: 300px;border: 1px solid #dcdcdc;box-shadow: 0 0 2px rgba(0,0,0,.2);}
+.rashifal h3 {display:none;}
+ul.tabs_rashi li#Numerology{background:none;}
+ul.tabs_rashi li#Numerology.active{background:#f0f0f0}
